@@ -1,0 +1,13 @@
+
+machine:
+  environment:
+    XCODE_SCHEME: nope
+    XCODE_PROJECT: nope
+    XCODE_WORKSPACE: nope
+dependencies:
+  override:
+    - ./install.sh
+    - ./build.sh
+test:
+  override:
+    - echo nope
