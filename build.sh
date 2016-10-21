@@ -34,9 +34,9 @@ echo "Attempting to build $project for iOS"
   -projectPath $(pwd) \
   -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
   -buildTarget ios \
-  -runEditorTests
+  -quit
 
-mv 
+mv Simple-Mobile-Application $CIRCLE_ARTIFACTS
 
 # echo "Attempting to build $project for Linux"
 # /Applications/Unity/Unity.app/Contents/MacOS/Unity \
