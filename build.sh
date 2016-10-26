@@ -33,7 +33,7 @@ echo "Attempting to build $project for iOS"
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
   -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
-  -buildTarget ios \
+  -executeMethod CommandLineBuild.iOSBuild \
   -quit
 
 mv Simple-Mobile-Application $CIRCLE_ARTIFACTS
