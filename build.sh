@@ -41,17 +41,6 @@ echo "moving the ios build to somewhere"
 
 mv Builds/iOS $CIRCLE_ARTIFACTS
 
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
-  -serial "$serial" \
-  -username "$username" \
-  -password "$password" \
-  -logFile $(pwd)/unity.log \
-  -returnlicense \
-  -quit
-
 
 
 # echo "Attempting to build $project for Linux"
@@ -64,5 +53,4 @@ mv Builds/iOS $CIRCLE_ARTIFACTS
 #   -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project.exe" \
 #   -quit
 
-echo 'Logs from build'
-cat $(pwd)/unity.log
+
