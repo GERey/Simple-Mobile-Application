@@ -35,6 +35,7 @@ echo "Attempting to build $project for iOS"
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
   -executeMethod CommandLineBuild.iOSBuild \
+  -returnlicense \
   -quit
 
 echo "moving the ios build to somewhere"
