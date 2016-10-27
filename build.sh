@@ -29,17 +29,16 @@ echo "Attempting to build $project for iOS"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
   -nographics \
+  -silent-crashes \
   -serial "$serial"\
   -username "$username"\
   -password "$password"\
-  -silent-crashes \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
-  -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
-  -buildTarget ios \
+  -executeMethod CommandLineBuild.iOSBuild \
   -quit
 
-mv Simple-Mobile-Application $CIRCLE_ARTIFACTS
+mv Builds/iOS $CIRCLE_ARTIFACTS
 
 # echo "Attempting to build $project for Linux"
 # /Applications/Unity/Unity.app/Contents/MacOS/Unity \
