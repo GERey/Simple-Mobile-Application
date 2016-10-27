@@ -29,6 +29,9 @@ echo "Attempting to build $project for iOS"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
   -nographics \
+  -serial "$serial"\
+  -username "$username"\
+  -password "$password"\
   -silent-crashes \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
