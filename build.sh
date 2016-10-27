@@ -28,17 +28,31 @@ project="Simple Mobile Placeholder"
 echo "Attempting to build $project for iOS"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
-  -nographics \
   -silent-crashes \
-  -serial "$serial"\
-  -username "$username"\
-  -password "$password"\
+  -serial "$serial" \
+  -username "$username" \
+  -password "$password" \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
   -executeMethod CommandLineBuild.iOSBuild \
   -quit
 
+echo "moving the ios build to somewhere"
+
 mv Builds/iOS $CIRCLE_ARTIFACTS
+
+/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+  -batchmode \
+  -nographics \
+  -silent-crashes \
+  -serial "$serial" \
+  -username "$username" \
+  -password "$password" \
+  -logFile $(pwd)/unity.log \
+  -returnlicense \
+  -quit
+
+
 
 # echo "Attempting to build $project for Linux"
 # /Applications/Unity/Unity.app/Contents/MacOS/Unity \
