@@ -32,7 +32,6 @@ echo "Attempting to build $project for iOS"
   -silent-crashes \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
-  -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
   -executeMethod CommandLineBuild.iOSBuild \
   -quit
 
