@@ -37,8 +37,8 @@ echo "Attempting to build $project for iOS"
   -executeMethod CommandLineBuild.iOSBuild \
   -quit
 
--echo 'Logs from build'
--cat $(pwd)/unity.log 
+echo 'Logs from build'
+cat $(pwd)/unity.log 
 
 echo "returning the license"
 
@@ -53,10 +53,8 @@ echo "returning the license"
   -projectPath $(pwd) \
   -quit
 
--echo 'Logs from build returning license'
--cat $(pwd)/unity.log 
-
-echo "moving the ios build to somewhere"
+echo 'Logs from build returning license'
+cat $(pwd)/unity.log 
 
 cd Builds/iOS
 xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone clean build CONFIGURATION_BUILD_DIR=$CIRCLE_ARTIFACTS
