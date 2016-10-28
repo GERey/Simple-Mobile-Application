@@ -35,12 +35,27 @@ echo "Attempting to build $project for iOS"
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
   -executeMethod CommandLineBuild.iOSBuild \
+  -quit
+
+echo "returning the license"
+
+/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+  -batchmode \
   -returnlicense \
+  -silent-crashes \
+  -serial "$serial" \
+  -username "$username" \
+  -password "$password" \
+  -logFile $(pwd)/unity.log \
+  -projectPath $(pwd) \
   -quit
 
 echo "moving the ios build to somewhere"
 
 mv Builds/iOS $CIRCLE_ARTIFACTS
+
+
+
 
 
 

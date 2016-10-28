@@ -8,7 +8,6 @@ dependencies:
   override:
     - ./install.sh
     - ./build.sh
-    - ./returnLicense.sh
 test:
   override:
     - echo nope
