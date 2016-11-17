@@ -10,5 +10,7 @@ Please note that in your CircleCI Project Settings, you'll need to fill in the f
 - username
 - password
 
+For more information please look in build.sh.
+
 
 
